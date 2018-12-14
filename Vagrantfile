@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
   end
   config.vm.define "chef-server" do |d|
     d.vm.box = "ubuntu/trusty64"
-    d.vm.hostname = "chef-server"
+    d.vm.hostname = "10.100.198.200"
     d.vm.network "private_network", ip: "10.100.198.200"
     d.vm.provision :shell, path: "scripts/bootstrap_chef.sh"
     d.vm.provider "virtualbox" do |v|
