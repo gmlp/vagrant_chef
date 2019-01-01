@@ -20,7 +20,10 @@ sudo chef-solo -o 'recipe[chef-server::default]'
 sudo chef-server-ctl org-create dou digitalonus -f dou.pem
 
 #creates an admin user
-sudo chef-server-ctl user-create admin Gonzalo Lopez gmlp.24a@gmail.com 123456 -f admin.pem -o dou
+sudo chef-server-ctl user-create admin Gonzalo Lopez gmlp.24a@gmail.com 123456 -f admin.pem 
+
+#Adds admin user as organization admin
+sudo chef-server-ctl org-user-add dou admin --admin
 
 #installs chef-manage plugin
 sudo chef-server-ctl install chef-manage 
